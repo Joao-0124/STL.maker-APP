@@ -1,29 +1,37 @@
-import { Link } from 'expo-router';
-import { StyleSheet } from 'react-native';
-
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function ModalScreen() {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText type="title">This is a modal</ThemedText>
-      <Link href="/" dismissTo style={styles.link}>
-        <ThemedText type="link">Go to home screen</ThemedText>
-      </Link>
-    </ThemedView>
+    <View style={styles.container}>
+      <Text style={styles.title}>Modal STL.Maker</Text>
+      <Text style={styles.text}>
+        Este é um exemplo de tela modal. Você pode usar este espaço no futuro
+        para exibir detalhes de uma solicitação, avisos importantes ou
+        confirmações.
+      </Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 24,
   },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
+  title: {
+    fontSize: 20,
+    fontWeight: "700",
+    marginBottom: 8,
+    color: "#fff",
+    textAlign: "center",
+  },
+  text: {
+    fontSize: 14,
+    color: "#f0f0f0",
+    textAlign: "center",
   },
 });
